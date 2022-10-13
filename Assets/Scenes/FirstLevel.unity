@@ -4797,7 +4797,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &2132112557
 MonoBehaviour:
@@ -4813,6 +4813,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 2132112558}
+  moveRight: {fileID: 21300000, guid: e0eea30f6a8665844a3546d4de34fcd5, type: 3}
+  moveLeft: {fileID: 21300000, guid: 6fee2124ac9123345bd197ff1baf70a4, type: 3}
+  idle: {fileID: 21300000, guid: 443a3f5c10aefd0459bda6d4b943ce24, type: 3}
 --- !u!50 &2132112558
 Rigidbody2D:
   serializedVersion: 4
@@ -4875,7 +4878,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: b49306db21f6f9147977a80365f2925a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 443a3f5c10aefd0459bda6d4b943ce24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4913,10 +4916,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38091da8522b764fb20f07c81c98edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 0.5
+  distance: -1
   boxMask:
     serializedVersion: 2
     m_Bits: 2147483647
+  pushRight: {fileID: 21300000, guid: a7e6b6b44c530654aa72a0b95282a235, type: 3}
+  pushLeft: {fileID: 21300000, guid: 66fd7513850bb7a42970e6e3373b4740, type: 3}
 --- !u!1001 &2097044400861334067
 PrefabInstance:
   m_ObjectHideFlags: 0

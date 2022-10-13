@@ -11,6 +11,40 @@ public class PlayerPush : MonoBehaviour
     private Lever lever;
 
     GameObject box;
+
+    [SerializeField] public Sprite pushRight;
+    [SerializeField] public Sprite pushLeft;
+    [SerializeField] public Sprite idle;
+
+    Vector3 raycastPos;
+
+    
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (Input.GetKey(KeyCode.D))
+        {
+            ChangeSprite(pushRight);
+            return;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            ChangeSprite(pushLeft);
+            return;
+        }
+
+        if (!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D) && this.GetComponent<SpriteRenderer>().sprite != idle)
+        {
+            ChangeSprite(idle);
+        }
+
+    }
+
+    void ChangeSprite(Sprite _NewSprite)
+    {
+        this.GetComponent<SpriteRenderer>().sprite = _NewSprite;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,17 +55,19 @@ public class PlayerPush : MonoBehaviour
     void Update()
     {
         Physics2D.queriesStartInColliders = false;
+        raycastPos = transform.position;
+   
        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, boxMask);
 
-        if (hit.collider != null && Input.GetKey(KeyCode.E))
-        {
-            box = hit.collider.gameObject;
+        //if (hit.collider != null && Input.GetKey(KeyCode.A))
+        //{
+        //    //box = hit.collider.gameObject;
 
-            box.GetComponent<FixedJoint2D>().enabled = true;
-            box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
-        }
+        //    ChangeSprite(pushLeft);
+        //}
 
-        if(lever != null && Input.GetKeyDown(KeyCode.E))
+
+        if (lever != null && Input.GetKeyDown(KeyCode.E))
         {
             lever.FlipLever();
         }
@@ -43,6 +79,8 @@ public class PlayerPush : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.right * transform.localScale.x * distance);
     }
+
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

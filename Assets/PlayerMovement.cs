@@ -21,6 +21,17 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
+    [SerializeField] public Sprite moveRight;
+    [SerializeField] public Sprite moveLeft;
+    [SerializeField] public Sprite idle;
+    [SerializeField] public Sprite pushRight;
+    [SerializeField] public Sprite pushLeft;
+    void ChangeSprite(Sprite _NewSprite)
+    {
+        this.GetComponent<SpriteRenderer>().sprite = _NewSprite;
+    }
+    
+
     // Update is called once per frame
     void Update()
     {
@@ -38,6 +49,29 @@ public class PlayerMovement : MonoBehaviour
         // Movement
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+        if(this.GetComponent<SpriteRenderer>().sprite != pushLeft && this.GetComponent<SpriteRenderer>().sprite != pushRight)
+        {
+            if (Input.GetKey(KeyCode.D))
+            {
+                ChangeSprite(moveRight);
+                return;
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                ChangeSprite(moveLeft);
+                return;
+            }
+            
+        }
+
+        if(!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D) && this.GetComponent<SpriteRenderer>().sprite != idle)
+        {
+            ChangeSprite(idle);
+        }
+        
+        
+
 
 
     }
