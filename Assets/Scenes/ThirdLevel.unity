@@ -2053,7 +2053,7 @@ Tilemap:
   - first: {x: -25, y: -11, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 4
+      m_TileIndex: 1
       m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -2593,7 +2593,7 @@ Tilemap:
   - first: {x: -1, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 4
+      m_TileIndex: 1
       m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -2984,14 +2984,14 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 24
     m_Data: {fileID: 11400000, guid: 8699b3da4cb3fe7499579bd4e77ad37e, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: 9cd494f0cfb3b4244854a55f37a44fb0, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 15a5bb2567647bc47b473cf0c3f5d644, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: 01e7fcf260d11fa4f90a6ccfd627e3e9, type: 2}
-  - m_RefCount: 2
-    m_Data: {fileID: 11400000, guid: 9cd494f0cfb3b4244854a55f37a44fb0, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: c7390b50e5f734245a4f840db4949bb0, type: 2}
   - m_RefCount: 56
@@ -3033,6 +3033,8 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 93
     m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: 9.5199e-41, g: 9.5199e-41, b: 9.5199e-41, a: 9.5199e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7324,7 +7326,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 0.32, y: 0.32}
+    newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -7346,11 +7348,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   rb: {fileID: 2132112558}
-  moveRight: {fileID: 21300000, guid: e0eea30f6a8665844a3546d4de34fcd5, type: 3}
-  moveLeft: {fileID: 21300000, guid: 6fee2124ac9123345bd197ff1baf70a4, type: 3}
-  idle: {fileID: 21300000, guid: 443a3f5c10aefd0459bda6d4b943ce24, type: 3}
-  pushRight: {fileID: 21300000, guid: a7e6b6b44c530654aa72a0b95282a235, type: 3}
-  pushLeft: {fileID: 21300000, guid: 66fd7513850bb7a42970e6e3373b4740, type: 3}
+  moveRight: {fileID: 0}
+  moveLeft: {fileID: 0}
+  idle: {fileID: 0}
+  pushRight: {fileID: 0}
+  pushLeft: {fileID: 0}
 --- !u!50 &2132112558
 Rigidbody2D:
   serializedVersion: 4
@@ -7418,7 +7420,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7455,9 +7457,9 @@ MonoBehaviour:
   boxMask:
     serializedVersion: 2
     m_Bits: 2147483647
-  pushRight: {fileID: 21300000, guid: a7e6b6b44c530654aa72a0b95282a235, type: 3}
-  pushLeft: {fileID: 21300000, guid: 66fd7513850bb7a42970e6e3373b4740, type: 3}
-  idle: {fileID: 21300000, guid: 443a3f5c10aefd0459bda6d4b943ce24, type: 3}
+  pushRight: {fileID: 0}
+  pushLeft: {fileID: 0}
+  idle: {fileID: 0}
 --- !u!1001 &2097044400861334067
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class PlayerPush : MonoBehaviour
     public LayerMask boxMask;
 
     private Lever lever;
+    private LeverTimed leverTimed;
 
     GameObject box;
 
@@ -71,6 +72,10 @@ public class PlayerPush : MonoBehaviour
         {
             lever.FlipLever();
         }
+        if (leverTimed != null && Input.GetKeyDown(KeyCode.E))
+        {
+            leverTimed.FlipLever();
+        }
 
     }
 
@@ -84,6 +89,10 @@ public class PlayerPush : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("LeverTimed"))
+        {
+            leverTimed = collision.GetComponent<LeverTimed>();
+        }
         if (collision.CompareTag("Lever"))
         {
             lever = collision.GetComponent<Lever>();
