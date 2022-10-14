@@ -18,6 +18,7 @@ public class StateController : MonoBehaviour
         
     }
 
+    
 
     public void SetState(int _State)
     {
@@ -27,6 +28,9 @@ public class StateController : MonoBehaviour
         {
             transform.GetChild(i).gameObject.SetActive(i == currentState);
         }
+
+       
+        
 
 
     }

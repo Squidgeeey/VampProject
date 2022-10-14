@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lever : MonoBehaviour
+public class LeverTimed : MonoBehaviour
 {
     [SerializeField] private StateController targetController;
     [SerializeField] private int leverState;
@@ -19,12 +19,17 @@ public class Lever : MonoBehaviour
         
     }
 
+    void ReturnState()
+    {
+        targetController.SetState(targetStates[0]);
+    }
+
     public void FlipLever()
     {
         leverState = (leverState + 1) % 2;
         targetController.SetState(targetStates[leverState]);
 
-  
+        Invoke("ReturnState", 3); //2 is the time
 
     }
 
