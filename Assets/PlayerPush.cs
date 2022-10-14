@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerPush : MonoBehaviour
 {
@@ -10,12 +11,17 @@ public class PlayerPush : MonoBehaviour
 
     private Lever lever;
     private LeverTimed leverTimed;
+    
+
 
     GameObject box;
 
     [SerializeField] public Sprite pushRight;
     [SerializeField] public Sprite pushLeft;
     [SerializeField] public Sprite idle;
+
+
+    [SerializeField] public string m_sceneName;
 
     Vector3 raycastPos;
 
@@ -96,6 +102,10 @@ public class PlayerPush : MonoBehaviour
         if (collision.CompareTag("Lever"))
         {
             lever = collision.GetComponent<Lever>();
+        }
+        if (collision.CompareTag("GoalTile"))
+        {
+            SceneManager.LoadScene(m_sceneName);
         }
     }
 
