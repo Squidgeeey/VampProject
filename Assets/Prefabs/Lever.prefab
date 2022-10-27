@@ -75,8 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 200
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41b9f894074f79f4ba1c82200c6b0c18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,3 +117,4 @@ MonoBehaviour:
   targetController: {fileID: 0}
   leverState: 0
   targetStates: 0000000001000000
+  delay: 0
