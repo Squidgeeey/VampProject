@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public Sprite idle;
     [SerializeField] public Sprite pushRight;
     [SerializeField] public Sprite pushLeft;
+
+    [SerializeField] public int umbrellaUseCount;
     [SerializeField] public int delay;
     void ChangeSprite(Sprite _NewSprite)
     {
@@ -75,15 +77,13 @@ public class PlayerMovement : MonoBehaviour
         {
             ChangeSprite(idle);
         }
-        
-        
-        if(Input.GetKey(KeyCode.Space))
+
+
+        if (Input.GetKey(KeyCode.Space) && umbrellaUseCount > 0)
         {
             isHoldingUmbrella = true;
             Invoke("HoldUmbrellaStop", delay);
+            umbrellaUseCount--;
         }
-
-
-
     }
 }
