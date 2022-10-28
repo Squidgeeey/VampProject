@@ -7020,7 +7020,7 @@ PrefabInstance:
     - target: {fileID: 611778287436975585, guid: 3593ec90c543cfd4e93620a43e0c7b39,
         type: 3}
       propertyPath: m_sceneName
-      value: FourthLevel
+      value: Tutorial Level
       objectReference: {fileID: 0}
     - target: {fileID: 611778287436975588, guid: 3593ec90c543cfd4e93620a43e0c7b39,
         type: 3}
@@ -8118,7 +8118,7 @@ MonoBehaviour:
   pushRight: {fileID: 21300000, guid: a7e6b6b44c530654aa72a0b95282a235, type: 3}
   pushLeft: {fileID: 21300000, guid: 66fd7513850bb7a42970e6e3373b4740, type: 3}
   idle: {fileID: 21300000, guid: 443a3f5c10aefd0459bda6d4b943ce24, type: 3}
-  m_sceneName: FourthLevel
+  m_sceneName: Tutorial Level
 --- !u!1001 &2097044400861334067
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 132859232137497238}
   - component: {fileID: 132859232137497239}
   - component: {fileID: 132859232137497226}
+  - component: {fileID: -4046094506935987990}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -121,7 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875091ebfde214843a508c099b511f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHoldingUmbrella: 0
   moveSpeed: 5
   rb: {fileID: 132859232137497237}
   moveRight: {fileID: 21300000, guid: e0eea30f6a8665844a3546d4de34fcd5, type: 3}
@@ -129,7 +129,6 @@ MonoBehaviour:
   idle: {fileID: 21300000, guid: 443a3f5c10aefd0459bda6d4b943ce24, type: 3}
   pushRight: {fileID: 21300000, guid: a7e6b6b44c530654aa72a0b95282a235, type: 3}
   pushLeft: {fileID: 21300000, guid: 66fd7513850bb7a42970e6e3373b4740, type: 3}
-  delay: 0
 --- !u!61 &132859232137497239
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -176,3 +175,18 @@ MonoBehaviour:
   pushLeft: {fileID: 21300000, guid: 66fd7513850bb7a42970e6e3373b4740, type: 3}
   idle: {fileID: 21300000, guid: 443a3f5c10aefd0459bda6d4b943ce24, type: 3}
   m_sceneName: SecondLevel
+--- !u!114 &-4046094506935987990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132859232137497232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d6284e2baab984ba74b602057a683b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHoldingUmbrella: 0
+  umbrellaUseCount: 1
+  delay: 2
