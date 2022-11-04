@@ -25,11 +25,20 @@ void OnTriggerEnter2D(Collider2D col)
     }
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Space) && umbrellaUseCount > 0)
+        if (Input.GetKey(KeyCode.Space))
         {
-            isHoldingUmbrella = true;
-            Invoke("HoldUmbrellaStop", delay);
-            umbrellaUseCount--;
+            if(umbrellaUseCount > 0)
+            {
+                
+                if (!isHoldingUmbrella)
+                {
+                    isHoldingUmbrella = true;
+                    Invoke("HoldUmbrellaStop", delay);
+                    umbrellaUseCount = umbrellaUseCount - 1;
+                    Debug.Log("Used Umbrella");
+                }
+            }
+            
             
             
         }

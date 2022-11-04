@@ -6,7 +6,10 @@ public class BookshelfTrigger : MonoBehaviour
 {
     [SerializeField] private StateController targetController;
     [SerializeField] private int targetState;
+    [SerializeField] private int originalState;
     [SerializeField] Collider2D targetPosition;
+    [SerializeField] private bool isMoveable = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,17 +23,38 @@ public class BookshelfTrigger : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision == targetPosition)
         {
             targetController.SetState(targetState);
-            transform.position = collision.transform.position;
-            Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
-            rigidbody.isKinematic = true;
-            rigidbody.velocity = Vector2.zero;
+            //transform.position = collision.transform.position;
+            
+            if(!isMoveable)
+            {
+                Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
+                rigidbody.isKinematic = true;
+                rigidbody.velocity = Vector2.zero;
+            }
+           
+            
+        }
+        else
+        {
+            targetController.SetState(originalState);
         }
 
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision == targetPosition)
+        {
+            targetController.SetState(originalState);
+
+
+        }
 
     }
 }
