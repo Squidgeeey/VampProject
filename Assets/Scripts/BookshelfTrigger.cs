@@ -28,10 +28,11 @@ public class BookshelfTrigger : MonoBehaviour
         if(collision == targetPosition)
         {
             targetController.SetState(targetState);
-            //transform.position = collision.transform.position;
+            
             
             if(!isMoveable)
             {
+                transform.position = collision.transform.position;
                 Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
                 rigidbody.isKinematic = true;
                 rigidbody.velocity = Vector2.zero;
