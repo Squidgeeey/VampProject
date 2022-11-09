@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class UmbrellaUSe : MonoBehaviour
 {
 
+    public AudioSource umbrellaAudio;
+
     public bool isHoldingUmbrella = false;
     [SerializeField] public int umbrellaUseCount;
     [SerializeField] public int delay;
@@ -58,6 +60,7 @@ void OnTriggerStay2D(Collider2D col)
                     Invoke("HoldUmbrellaStop", delay);
                     umbrellaUseCount = umbrellaUseCount - 1;
                     Debug.Log("Used Umbrella");
+                    umbrellaAudio.Play();
 
                    
                 }

@@ -14,6 +14,9 @@ public class PlayerPush : MonoBehaviour
     private Dialogue dialogueBox;
     public bool isObjectCollected = false;
 
+    public AudioSource audioSource;
+    public AudioClip objectAudio;
+
     [SerializeField] public string[] levels;
     [SerializeField] private static int levelNum = 0;
 
@@ -98,6 +101,7 @@ public class PlayerPush : MonoBehaviour
         if (dialogueBox != null && Input.GetKeyDown(KeyCode.E))
         {
             dialogueBox.ShowDialogue();
+            audioSource.Play();
         }
 
     }
@@ -138,11 +142,13 @@ public class PlayerPush : MonoBehaviour
         if (collision.CompareTag("Object"))
         {
             isObjectCollected = true;
+            audioSource.Play();
             Destroy(collision.gameObject);
         }
         if (collision.CompareTag("Crush"))
         {
             dialogueBox = collision.GetComponent<Dialogue>();
+            
         }
     }
 
@@ -156,6 +162,7 @@ public class PlayerPush : MonoBehaviour
         if (collision.CompareTag("Crush"))
         {
             dialogueBox.HideDialogue();
+            audioSource.Stop();
             //dialogueBox = null;
 
 
