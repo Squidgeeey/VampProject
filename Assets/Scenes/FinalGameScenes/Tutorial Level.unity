@@ -1272,6 +1272,7 @@ GameObject:
   - component: {fileID: 634887273}
   - component: {fileID: 634887275}
   - component: {fileID: 634887274}
+  - component: {fileID: 634887276}
   m_Layer: 0
   m_Name: Light
   m_TagString: LightTile
@@ -1765,6 +1766,23 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &634887276
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634887272}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1001 &788915583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2695,12 +2713,12 @@ PrefabInstance:
     - target: {fileID: -4046094506935987990, guid: 1470f5e61f789664785af2a7cccc2dc5,
         type: 3}
       propertyPath: delay
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4046094506935987990, guid: 1470f5e61f789664785af2a7cccc2dc5,
         type: 3}
       propertyPath: umbrellaUseCount
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 132859232137497226, guid: 1470f5e61f789664785af2a7cccc2dc5,
         type: 3}
@@ -2913,6 +2931,7 @@ GameObject:
   - component: {fileID: 1345020754}
   - component: {fileID: 1345020756}
   - component: {fileID: 1345020755}
+  - component: {fileID: 1345020757}
   m_Layer: 0
   m_Name: Light
   m_TagString: LightTile
@@ -3566,6 +3585,23 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1345020757
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345020753}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!61 &1475343457 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 2097044400834459700, guid: 87904e71a1177d2449bdd1633c8be7b1,

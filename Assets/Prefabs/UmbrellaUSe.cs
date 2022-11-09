@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UmbrellaUSe : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class UmbrellaUSe : MonoBehaviour
     public bool isHoldingUmbrella = false;
     [SerializeField] public int umbrellaUseCount;
     [SerializeField] public int delay;
+    [SerializeField] private Image image;
+    public Sprite fullUmbrella;
+    public Sprite damagedUmbrella;
+    public Sprite brokenUmbrella;
+    public Sprite unusableUmbrella;
+   
 
 void OnTriggerStay2D(Collider2D col)
 {
@@ -18,6 +25,21 @@ void OnTriggerStay2D(Collider2D col)
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    private void Awake()
+    {
+        //fullUmbrella = Resources.Load<Sprite>("UmbrellaUINormal");
+        //damagedUmbrella = Resources.Load<Sprite>("UmbrellaUIDamaged");
+        //brokenUmbrella = Resources.Load<Sprite>("UmbrellaUIBroken");
+        //unusableUmbrella = Resources.Load<Sprite>("UmbrellaUIUnusable");
+    }
 
     void HoldUmbrellaStop()
     {
@@ -36,19 +58,30 @@ void OnTriggerStay2D(Collider2D col)
                     Invoke("HoldUmbrellaStop", delay);
                     umbrellaUseCount = umbrellaUseCount - 1;
                     Debug.Log("Used Umbrella");
+
+                   
                 }
             }
-            
-            
-            
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
+        if(umbrellaUseCount >= 3)
+        {
+            image.sprite = fullUmbrella;
+        }
+        else if (umbrellaUseCount == 2)
+        {
+            image.sprite = damagedUmbrella;
+        }
+        else if (umbrellaUseCount == 1)
+        {
+            image.sprite = brokenUmbrella;
+        }
+        else if (umbrellaUseCount == 0)
+        {
+            image.sprite = unusableUmbrella;
+        }
+
+    }
     // Update is called once per frame
     void Update()
     {

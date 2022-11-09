@@ -1651,10 +1651,8 @@ MonoBehaviour:
   textBox: {fileID: 1366010415}
   image: {fileID: 459500613}
   dialogues:
-  - Output Text
-  levels:
-  - Tutorial Level
-  - Level 4
+  - God I hate normies, I want someone who's like a vampire
+  - 'Oh no!  I lost my umbrella '
 --- !u!1 &532937023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,8 +2024,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2270,7 +2268,22 @@ PrefabInstance:
     - target: {fileID: 132859232137497226, guid: 1470f5e61f789664785af2a7cccc2dc5,
         type: 3}
       propertyPath: m_sceneName
-      value: FourthLevel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 132859232137497226, guid: 1470f5e61f789664785af2a7cccc2dc5,
+        type: 3}
+      propertyPath: levels.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 132859232137497226, guid: 1470f5e61f789664785af2a7cccc2dc5,
+        type: 3}
+      propertyPath: levels.Array.data[0]
+      value: Tutorial Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 132859232137497226, guid: 1470f5e61f789664785af2a7cccc2dc5,
+        type: 3}
+      propertyPath: levels.Array.data[1]
+      value: Level 4
       objectReference: {fileID: 0}
     - target: {fileID: 132859232137497227, guid: 1470f5e61f789664785af2a7cccc2dc5,
         type: 3}
@@ -2362,7 +2375,8 @@ PrefabInstance:
       propertyPath: umbrellaUseCount
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4046094506935987990, guid: 1470f5e61f789664785af2a7cccc2dc5, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 1470f5e61f789664785af2a7cccc2dc5, type: 3}
 --- !u!4 &1864093853 stripped
