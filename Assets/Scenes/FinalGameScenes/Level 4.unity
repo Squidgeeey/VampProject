@@ -3478,7 +3478,7 @@ PrefabInstance:
     - target: {fileID: 132859232137497226, guid: 1470f5e61f789664785af2a7cccc2dc5,
         type: 3}
       propertyPath: m_sceneName
-      value: FourthLevel
+      value: Corridor
       objectReference: {fileID: 0}
     - target: {fileID: 132859232137497227, guid: 1470f5e61f789664785af2a7cccc2dc5,
         type: 3}

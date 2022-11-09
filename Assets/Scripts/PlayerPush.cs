@@ -11,8 +11,12 @@ public class PlayerPush : MonoBehaviour
 
     private Lever lever;
     private LeverTimed leverTimed;
+    private Dialogue dialogueBox;
     public bool isObjectCollected = false;
-    
+
+    [SerializeField] public string[] levels;
+    [SerializeField] private static int levelNum = 0;
+
 
 
     GameObject box;
@@ -56,7 +60,15 @@ public class PlayerPush : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SceneManager.activeSceneChanged += OnSceneChanged;
+    }
+
+    private void OnSceneChanged(Scene current, Scene next)
+    {
+        if(next.name != "Corridor")
+        {
+            levelNum++;
+        }
     }
 
     // Update is called once per frame
@@ -83,6 +95,10 @@ public class PlayerPush : MonoBehaviour
         {
             leverTimed.FlipLever();
         }
+        if (dialogueBox != null && Input.GetKeyDown(KeyCode.E))
+        {
+            dialogueBox.ShowDialogue();
+        }
 
     }
 
@@ -104,14 +120,29 @@ public class PlayerPush : MonoBehaviour
         {
             lever = collision.GetComponent<Lever>();
         }
-        if (collision.CompareTag("GoalTile") && isObjectCollected)
+        if (collision.CompareTag("GoalTile"))
         {
-            SceneManager.LoadScene(m_sceneName);
+            if( SceneManager.GetActiveScene().name == "Corridor")
+            {
+                SceneManager.LoadScene(levels[levelNum]);
+            }
+            else
+            {
+                if(isObjectCollected)
+                {
+                    SceneManager.LoadScene("Corridor");
+                }
+            }
+           
         }
         if (collision.CompareTag("Object"))
         {
             isObjectCollected = true;
             Destroy(collision.gameObject);
+        }
+        if (collision.CompareTag("Crush"))
+        {
+            dialogueBox = collision.GetComponent<Dialogue>();
         }
     }
 
@@ -121,6 +152,13 @@ public class PlayerPush : MonoBehaviour
         {
             lever = null;
            
+        }
+        if (collision.CompareTag("Crush"))
+        {
+            dialogueBox.HideDialogue();
+            //dialogueBox = null;
+
+
         }
     }
 }
