@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public Sprite pushRight;
     [SerializeField] public Sprite pushLeft;
 
+    public static bool hasMoved = false;
+
 void ChangeSprite(Sprite _NewSprite)
     {
         this.GetComponent<SpriteRenderer>().sprite = _NewSprite;
@@ -48,6 +50,10 @@ void ChangeSprite(Sprite _NewSprite)
             if (Input.GetKey(KeyCode.D))
             {
                 ChangeSprite(moveRight);
+                if(!hasMoved)
+                {
+                    hasMoved = true;
+                }
                 return;
             }
             else if (Input.GetKey(KeyCode.A))

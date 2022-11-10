@@ -11,7 +11,8 @@ public class Dialogue : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private TextMeshProUGUI textBox;
-    [SerializeField] private Image image;
+    [SerializeField] private Image speaker;
+    [SerializeField] private Image dialogueBox;
 
     void Start()
     {
@@ -53,7 +54,8 @@ public class Dialogue : MonoBehaviour
 
         string dialogue = GetDialogue();
         textBox.text = dialogue;
-        image.gameObject.SetActive(true);
+        speaker.gameObject.SetActive(true);
+        dialogueBox.gameObject.SetActive(true);
         textBox.gameObject.SetActive(true);
 
         //...
@@ -62,7 +64,8 @@ public class Dialogue : MonoBehaviour
     public void HideDialogue()
     {
         //...
-        image.gameObject.SetActive(false);
+        speaker.gameObject.SetActive(false);
+        dialogueBox.gameObject.SetActive(false);
         textBox.gameObject.SetActive(false);
 
         //...
