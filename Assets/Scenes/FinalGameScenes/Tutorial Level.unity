@@ -2735,6 +2735,11 @@ PrefabInstance:
       propertyPath: m_sceneName
       value: Corridor
       objectReference: {fileID: 0}
+    - target: {fileID: 132859232137497226, guid: 1470f5e61f789664785af2a7cccc2dc5,
+        type: 3}
+      propertyPath: objectAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 6b821aff23757e84aab53d354d6268a6, type: 3}
     - target: {fileID: 132859232137497227, guid: 1470f5e61f789664785af2a7cccc2dc5,
         type: 3}
       propertyPath: m_RootOrder

@@ -142,6 +142,7 @@ public class PlayerPush : MonoBehaviour
         if (collision.CompareTag("Object"))
         {
             isObjectCollected = true;
+            audioSource.clip = objectAudio;
             audioSource.Play();
             Destroy(collision.gameObject);
         }

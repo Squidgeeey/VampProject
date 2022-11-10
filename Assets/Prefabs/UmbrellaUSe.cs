@@ -8,6 +8,8 @@ public class UmbrellaUSe : MonoBehaviour
 {
 
     public AudioSource umbrellaAudio;
+    public AudioClip umbrellaClip;
+    public AudioClip umbrellaClose;
 
     public bool isHoldingUmbrella = false;
     [SerializeField] public int umbrellaUseCount;
@@ -46,6 +48,9 @@ void OnTriggerStay2D(Collider2D col)
     void HoldUmbrellaStop()
     {
         isHoldingUmbrella = false;
+        umbrellaAudio.clip = umbrellaClose;
+        umbrellaAudio.Play();
+
     }
     private void FixedUpdate()
     {
@@ -60,6 +65,7 @@ void OnTriggerStay2D(Collider2D col)
                     Invoke("HoldUmbrellaStop", delay);
                     umbrellaUseCount = umbrellaUseCount - 1;
                     Debug.Log("Used Umbrella");
+                    umbrellaAudio.clip = umbrellaClip;
                     umbrellaAudio.Play();
 
                    
