@@ -40,7 +40,10 @@ public class TutorialScript : MonoBehaviour
         {
             if(!hasMoved)
             {
+                listenText.gameObject.SetActive(false);
+                blackboardImage.gameObject.SetActive(false);
                 hasMoved = true;
+                
             }
             
         }
@@ -63,11 +66,19 @@ public class TutorialScript : MonoBehaviour
     {
         if (collision.CompareTag("Crush"))
         {
-            if(Input.GetKeyDown(KeyCode.E) && !hasInteracted)
+            Debug.Log("Interacting Crush");
+            if(Input.GetKeyUp(KeyCode.E))
             {
-                listenText.gameObject.SetActive(false);
-                blackboardImage.gameObject.SetActive(false);
-                hasInteracted = true;
+                Debug.Log(" Released E");
+                if (!hasInteracted)
+                {
+
+                    Debug.Log(" Destroying text");
+                    listenText.gameObject.SetActive(false);
+                    blackboardImage.gameObject.SetActive(false);
+                    hasInteracted = true;
+                }
+               
             }
 
         }
