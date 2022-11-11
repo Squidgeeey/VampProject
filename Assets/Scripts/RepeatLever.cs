@@ -7,7 +7,8 @@ public class RepeatLever : MonoBehaviour
     [SerializeField] private StateController targetController;
     [SerializeField] private int leverState;
     [SerializeField] private int[] targetStates;
-    [SerializeField] private bool isSwitching;
+    [SerializeField] private float delay;
+   private bool isSwitching;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +36,7 @@ public class RepeatLever : MonoBehaviour
         if (!isSwitching)
         {
             isSwitching = true;
-            Invoke("FlipLever", 2);
+            Invoke("FlipLever", delay);
         }
             
 
