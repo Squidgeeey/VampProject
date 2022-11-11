@@ -16356,6 +16356,22 @@ MonoBehaviour:
   dialogues:
   - God I hate normies, I want someone who's like a vampire
   - 'Oh no!  I lost my umbrella '
+--- !u!58 &516775273
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516775264}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
 --- !u!1 &532937023
 GameObject:
   m_ObjectHideFlags: 0
@@ -17343,6 +17359,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Crush
       objectReference: {fileID: 0}
+    - target: {fileID: 611778287436975586, guid: 3593ec90c543cfd4e93620a43e0c7b39,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 611778287436975586, guid: 3593ec90c543cfd4e93620a43e0c7b39,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 611778287436975587, guid: 3593ec90c543cfd4e93620a43e0c7b39,
         type: 3}
       propertyPath: m_SortingOrder
@@ -17415,6 +17441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 611778287436975585, guid: 3593ec90c543cfd4e93620a43e0c7b39, type: 3}
+    - {fileID: 611778287436975586, guid: 3593ec90c543cfd4e93620a43e0c7b39, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3593ec90c543cfd4e93620a43e0c7b39, type: 3}
 --- !u!1001 &1719478264

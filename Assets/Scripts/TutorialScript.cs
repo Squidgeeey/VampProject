@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class TutorialScript : MonoBehaviour
 {
     private static bool hasMoved = false;
     private static bool hasInteracted = false;
+    private static bool hasUmbrellaUsed = false;
+
 
     public TextMeshProUGUI listenText;
     public Image blackboardImage;
+
     public TextMeshProUGUI moveText;
     public Image blackboardImageMove;
+
+    public TextMeshProUGUI umbrellaText;
+    public Image blackboardImageUmbrella;
 
 
 
@@ -46,6 +53,14 @@ public class TutorialScript : MonoBehaviour
                 
             }
             
+        }
+        if(SceneManager.GetActiveScene().name == "Level 4")
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && !hasUmbrellaUsed)
+            {
+                umbrellaText.gameObject.SetActive(false);
+                blackboardImageUmbrella.gameObject.SetActive(false);
+            }
         }
 
 
