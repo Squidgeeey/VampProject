@@ -11,6 +11,7 @@ public class PlayerPush : MonoBehaviour
 
     private Lever lever;
     private LeverTimed leverTimed;
+    public bool isObjectCollected = false;
     
 
 
@@ -103,9 +104,14 @@ public class PlayerPush : MonoBehaviour
         {
             lever = collision.GetComponent<Lever>();
         }
-        if (collision.CompareTag("GoalTile"))
+        if (collision.CompareTag("GoalTile") && isObjectCollected)
         {
             SceneManager.LoadScene(m_sceneName);
+        }
+        if (collision.CompareTag("Object"))
+        {
+            isObjectCollected = true;
+            Destroy(collision.gameObject);
         }
     }
 

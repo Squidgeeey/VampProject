@@ -10,7 +10,7 @@ public class UmbrellaUSe : MonoBehaviour
     [SerializeField] public int umbrellaUseCount;
     [SerializeField] public int delay;
 
-void OnTriggerEnter2D(Collider2D col)
+void OnTriggerStay2D(Collider2D col)
 {
     if (col.CompareTag("LightTile") && !(isHoldingUmbrella)) // You can name this tag whatever you want, just make sure to tag all your death triggers with this
     {
