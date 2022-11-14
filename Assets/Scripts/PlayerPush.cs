@@ -35,25 +35,25 @@ public class PlayerPush : MonoBehaviour
 
     
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (Input.GetKey(KeyCode.D))
-        {
-            ChangeSprite(pushRight);
-            return;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            ChangeSprite(pushLeft);
-            return;
-        }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (Input.GetKey(KeyCode.D))
+    //    {
+    //        ChangeSprite(pushRight);
+    //        return;
+    //    }
+    //    if (Input.GetKey(KeyCode.A))
+    //    {
+    //        ChangeSprite(pushLeft);
+    //        return;
+    //    }
 
-        if (!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D) && this.GetComponent<SpriteRenderer>().sprite != idle)
-        {
-            ChangeSprite(idle);
-        }
+    //    if (!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D) && this.GetComponent<SpriteRenderer>().sprite != idle)
+    //    {
+    //        ChangeSprite(idle);
+    //    }
 
-    }
+    //}
 
     void ChangeSprite(Sprite _NewSprite)
     {

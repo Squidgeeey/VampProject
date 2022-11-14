@@ -45,29 +45,29 @@ void ChangeSprite(Sprite _NewSprite)
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        if(this.GetComponent<SpriteRenderer>().sprite != pushLeft && this.GetComponent<SpriteRenderer>().sprite != pushRight)
-        {
-            if (Input.GetKey(KeyCode.D))
-            {
-                ChangeSprite(moveRight);
-                if(!hasMoved)
-                {
-                    hasMoved = true;
-                }
-                return;
-            }
-            else if (Input.GetKey(KeyCode.A))
-            {
-                ChangeSprite(moveLeft);
-                return;
-            }
+        //if(this.GetComponent<SpriteRenderer>().sprite != pushLeft && this.GetComponent<SpriteRenderer>().sprite != pushRight)
+        //{
+        //    if (Input.GetKey(KeyCode.D))
+        //    {
+        //        ChangeSprite(moveRight);
+        //        if(!hasMoved)
+        //        {
+        //            hasMoved = true;
+        //        }
+        //        return;
+        //    }
+        //    else if (Input.GetKey(KeyCode.A))
+        //    {
+        //        ChangeSprite(moveLeft);
+        //        return;
+        //    }
             
-        }
+        //}
 
-        if(!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D) && this.GetComponent<SpriteRenderer>().sprite != idle)
-        {
-            ChangeSprite(idle);
-        }
+        //if(!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D) && this.GetComponent<SpriteRenderer>().sprite != idle)
+        //{
+        //    ChangeSprite(idle);
+        //}
 
 
     }
