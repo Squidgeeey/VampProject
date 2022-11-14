@@ -3,7 +3,16 @@ guid: f1d6284e2baab984ba74b602057a683b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - umbrellaAudio: {instanceID: 0}
+  - umbrellaClip: {instanceID: 0}
+  - umbrellaClose: {instanceID: 0}
+  - image: {instanceID: 0}
+  - fullUmbrella: {instanceID: 0}
+  - damagedUmbrella: {instanceID: 0}
+  - brokenUmbrella: {instanceID: 0}
+  - unusableUmbrella: {instanceID: 0}
+  - gameObjectToDeactivate: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

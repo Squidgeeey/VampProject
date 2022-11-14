@@ -19,17 +19,22 @@ public class UmbrellaUSe : MonoBehaviour
     public Sprite damagedUmbrella;
     public Sprite brokenUmbrella;
     public Sprite unusableUmbrella;
+    public GameObject gameObjectToDeactivate;
    
 
 void OnTriggerStay2D(Collider2D col)
 {
     if (col.CompareTag("LightTile") && !(isHoldingUmbrella)) // You can name this tag whatever you want, just make sure to tag all your death triggers with this
     {
-        //Reset game here:
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            PlayerDied();
     }
 }
 
+    private void PlayerDied()
+    {
+        LevelManager.instance.GameOver();
+        gameObjectToDeactivate.SetActive(false);
+    }
 
     // Start is called before the first frame update
     void Start()
