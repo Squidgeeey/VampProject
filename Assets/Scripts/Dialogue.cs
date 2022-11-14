@@ -14,16 +14,20 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private Image speaker;
     [SerializeField] private Image dialogueBox;
 
+    private bool updatedDialogue;
+
     void Start()
     {
         SceneManager.activeSceneChanged += OnSceneChanged;
+        updatedDialogue = false;
     }
 
     private void OnSceneChanged(Scene current, Scene next)
     {
-        if(next.name == "Corridor")
+        if(next.name == "Corridor" && updatedDialogue == false)
         {
             dialogueIdx = Mathf.Clamp(dialogueIdx + 1, 0, dialogues.Length);
+            updatedDialogue = true;
         }
         
     }
@@ -43,8 +47,9 @@ public class Dialogue : MonoBehaviour
     
     public string GetDialogue()
     {
-        //Assert.IsTrue(dialogueIdx < dialogues.Length); //Assertion sanity check, you can omit this if you want, I just like them
+        Assert.IsTrue(dialogueIdx < dialogues.Length); //Assertion sanity check, you can omit this if you want, I just like them
         string dialogue = dialogues[dialogueIdx];
+
         return dialogue;
     }
 

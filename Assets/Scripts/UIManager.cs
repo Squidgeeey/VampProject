@@ -8,6 +8,6 @@ public class UIManager : MonoBehaviour
 
     public void ToggleDeathPanel()
     {
-        deathpanel.SetActive(!deathpanel.activeSelf);
+         deathpanel.SetActive(!deathpanel.activeSelf);
     }
 }

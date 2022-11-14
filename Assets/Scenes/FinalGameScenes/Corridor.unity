@@ -15602,7 +15602,7 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -16356,6 +16356,7 @@ MonoBehaviour:
   dialogues:
   - God I hate normies, I want someone who's like a vampire
   - 'Oh no!  I lost my umbrella '
+  - Oh you found my umbrella that's lowkey kinda slay.
 --- !u!58 &516775273
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17462,6 +17463,11 @@ PrefabInstance:
       propertyPath: umbrellaUseCount
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -4046094506935987990, guid: 1470f5e61f789664785af2a7cccc2dc5,
+        type: 3}
+      propertyPath: gameObjectToDeactivate
+      value: 
+      objectReference: {fileID: 80260204}
     - target: {fileID: 132859232137497226, guid: 1470f5e61f789664785af2a7cccc2dc5,
         type: 3}
       propertyPath: audioSource
@@ -17475,7 +17481,7 @@ PrefabInstance:
     - target: {fileID: 132859232137497226, guid: 1470f5e61f789664785af2a7cccc2dc5,
         type: 3}
       propertyPath: levels.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 132859232137497226, guid: 1470f5e61f789664785af2a7cccc2dc5,
         type: 3}
@@ -17485,7 +17491,7 @@ PrefabInstance:
     - target: {fileID: 132859232137497226, guid: 1470f5e61f789664785af2a7cccc2dc5,
         type: 3}
       propertyPath: levels.Array.data[1]
-      value: Level 4
+      value: Level3
       objectReference: {fileID: 0}
     - target: {fileID: 132859232137497226, guid: 1470f5e61f789664785af2a7cccc2dc5,
         type: 3}

@@ -20,7 +20,7 @@ public class PlayerPush : MonoBehaviour
     [SerializeField] public string[] levels;
     [SerializeField] private static int levelNum = 0;
 
-
+    public bool isDead;
 
     GameObject box;
 
@@ -70,7 +70,7 @@ public class PlayerPush : MonoBehaviour
     {
         if(next.name != "Corridor")
         {
-            levelNum++;
+            
         }
     }
 
@@ -129,12 +129,14 @@ public class PlayerPush : MonoBehaviour
             if( SceneManager.GetActiveScene().name == "Corridor")
             {
                 SceneManager.LoadScene(levels[levelNum]);
+                levelNum++;
             }
             else
             {
                 if(isObjectCollected)
                 {
                     SceneManager.LoadScene("Corridor");
+                   
                 }
             }
            

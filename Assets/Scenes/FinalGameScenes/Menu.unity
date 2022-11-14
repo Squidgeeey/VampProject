@@ -914,7 +914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 869a3277cc153004ebed3306ef61d720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLevel: Tutorial Level
+  firstLevel: Corridor
 --- !u!1 &1489662240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,4 +1256,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 869a3277cc153004ebed3306ef61d720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLevel: Tutorial Level
+  firstLevel: Corridor
