@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerPush : MonoBehaviour
@@ -9,10 +10,15 @@ public class PlayerPush : MonoBehaviour
     public float distance = 0.5f;
     public LayerMask boxMask;
 
+    private bool fadeStarted = false;
+    private bool endGame = false;
+
     private Lever lever;
     private LeverTimed leverTimed;
     private Dialogue dialogueBox;
     public bool isObjectCollected = false;
+
+    public GameObject blackBox;
 
     public AudioSource audioSource;
     public AudioClip objectAudio;
@@ -104,13 +110,24 @@ public class PlayerPush : MonoBehaviour
             audioSource.Play();
         }
 
+
+        if(SceneManager.GetActiveScene().name == "Corridor")
+        {
+            if(endGame && !fadeStarted)
+            {
+                StartCoroutine(Fade(true, 0.1f));
+                fadeStarted = true;
+            }
+        }
+
+        if(blackBox.GetComponent<Image>().color.a >= 1)
+        {
+            SceneManager.LoadScene("Menu");
+        }
+
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.right * transform.localScale.x * distance);
-    }
+    
 
     
 
@@ -155,6 +172,36 @@ public class PlayerPush : MonoBehaviour
         }
     }
 
+    private IEnumerator Fade(bool fadeToBlack = true, float fadeSpeed = 5)
+    {
+
+        Color color = blackBox.GetComponent<Image>().color;
+        float fadeAmount;
+
+        if(fadeToBlack)
+        {
+            while (blackBox.GetComponent<Image>().color.a < 1)
+            {
+                fadeAmount = color.a + (fadeSpeed * Time.deltaTime);
+
+                color = new Color(color.r, color.g, color.b, fadeAmount);
+                blackBox.GetComponent<Image>().color = color;
+                yield return null;
+            }
+        }
+        else
+        {
+            while (blackBox.GetComponent<Image>().color.a > 0)
+            {
+                fadeAmount = color.a + (fadeSpeed * Time.deltaTime);
+
+                color = new Color(color.r, color.g, color.b, fadeAmount);
+                blackBox.GetComponent<Image>().color = color;
+                yield return null;
+            }
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Lever"))
@@ -166,6 +213,11 @@ public class PlayerPush : MonoBehaviour
         {
             dialogueBox.HideDialogue();
             audioSource.Stop();
+            if(SceneManager.GetActiveScene().name == "Corridor" && levelNum == levels.Length)
+            {
+                endGame = true;
+            }
+            
             //dialogueBox = null;
 
 
