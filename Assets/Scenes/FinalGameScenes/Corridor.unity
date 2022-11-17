@@ -16324,8 +16324,9 @@ MonoBehaviour:
   dialogueBox: {fileID: 1334227161}
   dialogues:
   - God I hate normies, I want someone who's like a vampire
-  - 'Oh no!  I lost my umbrella '
+  - Oh no!  My umbrella of Vampire Fortitude!  It's gone!
   - Oh you found my umbrella that's lowkey kinda slay.
+  - You wield the Vampire Fortitude Umbrella well... hmmm...
   - I don't think I've ever noticed you before.  You're so dark and gloomy.  The
     ultimate vampire.  I love you.  You own my heart.
 --- !u!1 &532937023
@@ -16581,7 +16582,7 @@ PrefabInstance:
     - target: {fileID: 907398298901042845, guid: fa1eaf25c437640419b6d63512753c89,
         type: 3}
       propertyPath: levels.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 907398298901042845, guid: fa1eaf25c437640419b6d63512753c89,
         type: 3}
@@ -16597,6 +16598,11 @@ PrefabInstance:
         type: 3}
       propertyPath: levels.Array.data[2]
       value: Level 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 907398298901042845, guid: fa1eaf25c437640419b6d63512753c89,
+        type: 3}
+      propertyPath: levels.Array.data[3]
+      value: Level 6
       objectReference: {fileID: 0}
     - target: {fileID: 5374722137985535229, guid: fa1eaf25c437640419b6d63512753c89,
         type: 3}
@@ -17506,7 +17512,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 083ebfb8cffa70748be0cefdf1ec4276, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bce0d08a833598742b48cd6b57efec1a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.79
   m_Pitch: 1.1
